@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(192, 107, 174);
+    color: rgb(94, 51, 51);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.In {
+    
+    font-weight: bold;
+    color: rgb(0, 255, 115);
+    text-shadow: 3px 3px rgb(52, 138, 18);
+    font-size: 24px;
+}
+
+.Menu {
+    color: rgb(255, 30, 30);
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.O1 {
+    transform: rotate(20deg);
+}
+
+.O2 {
+    text-decoration: underline;
