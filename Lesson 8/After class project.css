@@ -1,0 +1,53 @@
+.body {
+    background-color: darkblue;
+    background-image: linear-gradient(To left,purple,coral);
+    background-repeat: no-repeat;
+
+    background-position: top center;
+    font-family:Arial;
+}
+
+
+
+
+.Main {
+    background-image: linear-gradient(to bottom, red,orange);
+    border-radius: 20px;
+    text-align: center;
+
+    color: rgb(9, 107, 163);
+}
+
+.weather-card {
+    background-color: rgb(25, 84, 112);
+    border-radius: 20px;
+    color: rgb(110, 96, 96);
+
+}
+
+.weather-card h2 {
+    color: rgb(46, 145, 104);
+}
+
+.star {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(123, 79, 224);
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        background-color: rgb(0, 255, 191);
+    }
+
+    to {
+        background-color: rgb(136, 255, 24);
+    }
+}
+
+.footer-text {
+    text-align: center;
+    color: rgb(189, 41, 41);
+}
