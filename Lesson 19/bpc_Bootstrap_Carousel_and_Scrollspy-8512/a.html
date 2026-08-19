@@ -1,0 +1,83 @@
+<html>
+   <head>
+      <title>My Animal Safari</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <style>
+         body{
+            position: relative; background-color: aqua; 
+         }
+         .safari-slide{
+            height: 200px ; text-align: center; padding-top: 75px;
+         }
+         .slide-forest{
+            background-color: rgb(53, 186, 30);
+         }
+         .slide-ocean{
+            background-color: rgb(150, 197, 31);
+         }
+         .slide-desert{
+            background-color: rgb(60, 86, 30);
+         }
+      </style>
+   </head>
+   <body data-spy="scroll" data-target="#safariNav" data-offset="60">
+      <div id="safaricarousel" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#safaricarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#safaricarousel" data-slide-to="1"></li>
+            <li data-target="#safaricarousel" data-slide-to="2"></li>
+         </ol>
+
+
+         <div class="carousel-inner">
+
+       <div class="carousel-item active safari-slide slide-forest">FOREST SAFARI</div>
+      <div class="carousel-item safari-slide slide-desert">DESERT SAFARI</div>
+         <div class="carousel-item safari-slide slide-ocean">OCEAN SAFARI</div>
+      </div>
+
+      <a class="carousel-control-prev" href="#safaricarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span></a>
+      <a class="carousel-control-prev" href="#safaricarousel" data-slide="next"> <span class="carousel-control-next-icon"></span></a>
+
+   
+   </div>
+
+
+
+      
+
+</html><!--
+
+   
+
+3) Style the safari page.
+   a) Set the body position to relative for Scrollspy.
+   b) Style carousel slides using `.safari-slide`.
+   c) Add different background colours for forest, ocean, and desert slides.
+   d) Style content sections using `.section`.
+   e) Add different background colours for each safari section.
+
+4) Create the Bootstrap carousel.
+   a) Use `carousel slide` classes for the slider.
+   b) Add carousel indicators for three slides.
+   c) Add Forest, Ocean, and Desert safari slides.
+   d) Add Previous and Next controls to move between slides.
+
+5) Create the Scrollspy navigation bar.
+   a) Use a Bootstrap navbar with `sticky-top`.
+   b) Add the Safari Guide brand name.
+   c) Add links for Forest, Ocean, and Desert.
+   d) Link each navigation item to its matching section ID.
+
+6) Create the safari content sections.
+   a) Add a Forest section with the ID `forest`.
+   b) Add an Ocean section with the ID `ocean`.
+   c) Add a Desert section with the ID `desert`.
+   d) Add a heading and description inside each section.
+
+7) Add required Bootstrap scripts.
+   a) Link jQuery before Bootstrap JavaScript.
+   b) Link Bootstrap JavaScript using the `<script>` tag.
+
+8) Close the `<body>` and `<html>` tags to complete the webpage.
+-->
