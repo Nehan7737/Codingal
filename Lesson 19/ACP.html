@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>My Animal Safari</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            position: relative;
+            background-color: aqua;
+        }
+
+        .jungle-slide {
+            height: 200px;
+            text-align: center;
+            padding-top: 75px;
+        }
+
+        .slide-forest {
+            background-color: rgb(53, 186, 30);
+        }
+
+        .slide-ocean {
+            background-color: rgb(150, 197, 31);
+        }
+
+        .slide-desert {
+            background-color: rgb(60, 86, 30);
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#jungleNav" data-offset="60">
+    <div id="junglecarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#junglecarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#junglecarousel" data-slide-to="1"></li>
+            <li data-target="#junglecarousel" data-slide-to="2"></li>
+        </ol>
+
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active jungle-slide slide-forest">Rainforest Adventure</div>
+            <div class="carousel-item jungle-slide slide-desert">Jungle River Journey</div>
+            <div class="carousel-item jungle-slide slide-ocean">Night Jungle Safari</div>
+        </div>
+
+        <a class="carousel-control-prev" href="#junglecarousel" data-slide="prev"> <span
+                class="carousel-control-prev-icon"></span></a>
+        <a class="carousel-control-prev" href="#junglecarousel" data-slide="next"> <span
+                class="carousel-control-next-icon"></span></a>
+
+
+    </div>
+
+
+</html><!--
