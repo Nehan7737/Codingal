@@ -1,0 +1,129 @@
+<html>
+   <head>
+      <title>My Phone Contact</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="container">
+      <h1>My Phone Contact</h1>
+      <p>Introduction to objects in JavaScript</p>
+      </div>
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title">Contact Details</h5>
+
+               <ul class="list-group">
+                  <li class="list-group-item">
+                  <span class="card-label">name</span>
+                  <strong id="name">-</strong></li>
+
+                  <li class="list-group-item">
+                     <span class="card-label">phone</span>
+                     <strong id="phone">-</strong>
+                  </li>
+
+                  <li class="list-group-item">
+                     <span class="card-label">city</span>
+                     <strong id="city">-</strong>
+
+                      <li class="list-group-item">
+                  <span class="card-label">school</span>
+                  <strong id="school">-</strong></li>
+                  </li>
+
+               </ul>
+            </div>
+         </div>
+         <hr>
+         <div class="card">
+            <div class="card-body">
+               <h4>JavaScript Objects:</h4>
+               <pre id="codeDisplay" class="bg-light"></pre>
+            </div>
+         </div>
+
+      </div>
+      <script>
+
+         var myDetail= {
+            name: "Nehan",
+            school: "SIS",
+            phone: "05********",
+            city: "sharjah"
+         };
+         var name1= document.getElementsById("name");
+         var phone1= document.getElementById("phone");
+
+         name1.textContent=myDetail.name;
+         phone1.textContent=myDetail.phone;
+
+          var school1 = document.getElementById("school");
+           var city1 = document.getElementById("city");
+
+           school1.textContent=myDetail["school"];
+           city1.textContent = myDetail["city1"];
+
+           var code=document.getElementById("codeDisplay");
+           code.textContent='var myDetail={\n'+
+
+         ' name  :"' +myDetail.name +'",/n'+
+         ' phone :"' +myDetail.phone+'",/n'+
+         ' school:"' + myDetail["school"] + '",/n' +
+         ' city:"' + myDetail["city"] + '",/n' +
+      '};';
+
+      </script>
+   </body>
+</html><!--
+1) Start the HTML document.
+   a) Use `<!DOCTYPE html>` to define the page as an HTML5 document.
+   b) Open the `<html>` tag and set the language as English.
+
+2) Create the head section.
+   a) Add character encoding using `<meta charset="UTF-8">`.
+   b) Set the page title as "My Phone Contact".
+   c) Link Bootstrap 5 CSS using the CDN link.
+   d) Add internal CSS using the `<style>` tag.
+
+3) Style the webpage.
+   a) Set a light grey background for the page.
+   b) Style the main heading with orange colour.
+   c) Style small labels using `.card-label`.
+   d) Style the code display area using `pre`.
+
+4) Create the main content container.
+   a) Use Bootstrap `container` to keep content centred.
+   b) Add the page heading and lesson subtitle.
+
+5) Create the contact card.
+   a) Use a Bootstrap card to display contact details.
+   b) Add list items for name, phone, school, and city.
+   c) Give each value an ID so JavaScript can update it.
+   d) Use placeholder dashes before the values are added.
+
+6) Create the code display card.
+   a) Add another Bootstrap card below the contact card.
+   b) Add a `<pre>` element with the ID `codeDisplay`.
+   c) Use it to show the JavaScript object as code.
+
+7) Create the JavaScript object.
+   a) Create an object named `myContact`.
+   b) Store name, phone, school, and city as object properties.
+
+8) Use dot notation.
+   a) Select the name and phone elements using `getElementById()`.
+   b) Use `myContact.name` to display the name.
+   c) Use `myContact.phone` to display the phone number.
+
+9) Use bracket notation.
+   a) Select the school and city elements.
+   b) Use `myContact["school"]` to display the school.
+   c) Use `myContact["city"]` to display the city.
+
+10) Show the object in the code box.
+   a) Select the `codeDisplay` element.
+   b) Build the object text using property values.
+   c) Use `textContent` to display the formatted code.
+
+11) Close the `<script>`, `<body>`, and `<html>` tags to complete the webpage.
+-->
