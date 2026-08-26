@@ -51,7 +51,7 @@
             phone: "05********",
             city: "sharjah"
          };
-         var name1= document.getElementsById("name");
+         var name1= document.getElementById("name");
          var phone1= document.getElementById("phone");
 
          name1.textContent=myDetail.name;
@@ -61,15 +61,15 @@
            var city1 = document.getElementById("city");
 
            school1.textContent=myDetail["school"];
-           city1.textContent = myDetail["city1"];
+           city1.textContent = myDetail["city"];
 
            var code=document.getElementById("codeDisplay");
            code.textContent='var myDetail={\n'+
 
-         ' name  :"' +myDetail.name +'",/n'+
-         ' phone :"' +myDetail.phone+'",/n'+
-         ' school:"' + myDetail["school"] + '",/n' +
-         ' city:"' + myDetail["city"] + '",/n' +
+         ' name  :"' +myDetail.name +'",\n'+
+         ' phone :"' +myDetail.phone+'",\n'+
+         ' school:"' + myDetail["school"] + '",\n' +
+         ' city:"' + myDetail["city"] + '",\n' +
       '};';
 
       </script>
