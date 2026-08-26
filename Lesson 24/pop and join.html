@@ -1,0 +1,23 @@
+<html> 
+   <body>
+    <h1>pop() and join() in JavaScript</h1>
+    <p>the "pop()" command removes the last element of an Array and the "join()" command connects all of the elements in an Array.</p>
+
+    <p id="join"></p>
+    <p id="pop1"></p>
+    <p id="pop2"></p>
+
+   
+   <script>
+    var colors=["Red","Blue","Green","Yellow","Orange"];
+
+    
+    document.getElementById("join").innerHTML=colors.join("*");
+    document.getElementById("pop1").innerHTML=colors; 
+    colors.pop()
+    document.getElementById("pop2").innerHTML = colors;
+
+
+   </script>
+   </body>
+</html>
