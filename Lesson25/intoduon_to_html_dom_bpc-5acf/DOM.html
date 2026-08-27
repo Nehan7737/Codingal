@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Zoo</title>
+        <style>
+
+
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background: #b2e116;
+                text-align: center;
+                padding: 23px;
+            }
+
+            h2{
+
+                color: #dec418;
+                
+            }
+
+            #zoo{
+                border:2px dotted lightgreen;border-radius: 12px;
+                width: 300px;
+                margin: 12px;
+                padding: 20px;
+                background-color: rgb(45, 64, 103);
+                text-align: center;
+                
+            }
+
+            button{
+                background-color: orange;
+                color: black;
+                padding: 13px;
+            }
+
+            .zone{
+                 border:2px solid rgb(9, 175, 109);border-radius: 12px;
+                margin: 12px;
+                padding: 20px;
+                background-color: aquamarine;
+
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h2>My ZOO</h2>
+        <p>This page uses DOMs which are like a family tree.</p>
+
+        <div id="zoo">
+            <div class="zone"><span id="zone1"></span></div>
+            <div class="zone"><span id="zone2"></span></div>
+            <div class="zone"><span id="zone3"></span></div>
+            <div class="zone"><span id="total-animals"></span></div>
+            
+        </div><br>
+
+        <button onclick="openzoo()">Open the ZOO!</button>
+
+        <p id="zoo-status"></p>
+
+        <script>
+
+            function openzoo(){
+
+
+                document.getElementById("zone1").innerHTML="Lion";
+                document.getElementById("zone2").innerHTML="Cow";
+                document.getElementById("zone3").innerHTML = "Duck";
+                document.getElementById("total-animals").innerHTML = "3";
+
+
+                document.getElementById("zoo").style.backgroundColor="cyan";
+
+                document.getElementById("zoo-status").innerHTML=document.title+"is now open!!";
+
+
+
+
+            }
+
+            
+
+
+
+        </script>
+
+
+
+    </body>
+</html>
+
