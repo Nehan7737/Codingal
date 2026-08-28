@@ -1,0 +1,92 @@
+<html>
+ <head>
+    <title>
+        My Gamer Profile
+    </title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: aquamarine;
+            padding: 30px;
+        }
+        h2{
+            color: rgb(121, 213, 9);
+
+        }
+        button{
+            background-color: rgb(235, 187, 14);
+            color: rgb(97, 115, 14);
+            padding: 15px;
+            border-radius: 2px;
+        }
+        div{
+            border:2px solid lightgreen;
+            width:300px;
+            margin: 3px;
+            padding: 30px;
+            border-radius: 2px;
+            text-align: center;
+        }
+    </style>
+
+ </head>
+ <body>
+    <h2>My Gamer Profile</h2>
+    <p> This page shows my gamer profile.</p>
+
+    <button onclick="myProfile()">Show Profile</button>
+    <div>Name <span id="Name"></span></div>
+    <div>My Score <span id="My-Score"></span></div>
+    <div>High score <span id="High-score"></span></div>
+    <div>Rank <span id="Rank"></span></div>
+    <div>Greeting <span id="Greeting"></span></div>
+    <div>stars <span id="stars"></span></div>
+    <div>Bonus Level <span id="Bonus-Level"></span></div>
+    <div>Team Name <span id="Team-Name"></span></div>
+
+    <script>
+        function myProfile(){
+            let Name= "Nehan";   
+            let Myscore=   75;
+            let Highscore= 100;
+            let BonusLevel="null";
+            let TeamName;
+
+            let Topscore=Myscore==Highscore;
+            let Rank;
+            if (Myscore>=80){
+                Rank="Gold";
+            }
+            
+            else if(Myscore>=50){
+                Rank="Silver";
+            }
+
+            else{
+                Rank="Bronze";
+            }
+
+            var star="";
+            var count=0;
+            while(count<5)
+            {
+                star=star+"*";
+                count=count+1;
+            }
+
+            document.getElementById("Name").innerHTML = Name;
+             document.getElementById("My-Score").innerHTML = Myscore+"out of"+Highscore;
+              document.getElementById("High-score").innerHTML = Topscore;
+               document.getElementById("stars").innerHTML = star;
+                document.getElementById("Bonus-Level").innerHTML = BonusLevel;
+               
+
+        }
+
+        
+
+    </script>
+
+ </body>
+</html>
