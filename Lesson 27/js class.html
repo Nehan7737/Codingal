@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Java Script classes</title>
+    </head>
+    <body>
+        <h1>Planets with Fun Facts</h1>
+        <p>This page shows some planets with a special fact.</p>
+        <button onclick="myplanet()">Show Planets!</button>
+
+        <div class="cards">
+        <div id="card1"></div>
+        <div id="card2"></div>
+        <div id="card3"></div>
+        </div>
+
+        <script>
+
+            class planet{
+                constructor(name,fact)
+                
+                {
+                    this.name=name;
+                    this.fact=fact;
+
+                
+                ;}
+
+                describe(){return this.name+":"+this.fact;}
+            }
+
+            function myplanet(){
+
+                let p1 = new planet("Earth","The only planet with life.");
+                let p2 = new planet("Mars", "Its also known as the Red Planet.");
+                 let p3 = new planet("Mercury", "Its the closest planet to the sun.");
+             
+
+             document.getElementById("card1").innerHTML=
+             "<div class='card'><div class='planet-name'>"+ p1.name +"</div>"+
+             "<div class='planet-fact'>"+ p1.describe() +"</div></div>";
+
+             document.getElementById("card2").innerHTML =
+                    "<div class='card'><div class='planet-name'>" + p2.name + "</div>" +
+                   "<div class='planet-fact'>" + p2.describe() + "</div></div>";
+
+                   document.getElementById("card3").innerHTML =
+                        "<div class='card'><div class='planet-name'>" + p3.name + "</div>" +
+                            "<div class='planet-fact'>" + p3.describe() + "</div></div>";}
+
+
+
+        
+
+        </script>
+
+        
+    </body>
+</html>
