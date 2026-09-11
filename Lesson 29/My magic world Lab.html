@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>My Magic World Lab</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>My Magic World Lab</h1>
+            <p>In this website, we are gonna see how we can do the catch and error function.</p>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">What type it is</h3>
+
+                    <button class="btn btn-primary" onclick="checkTypes()">Check the Types</button>
+                    <div id="getresult" class="box p-3 mt-3 rounded"> Press the button to reveal the types!</div>
+                    </div></div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Switch the type:</h3>
+                            <input id="integer" class="form-control mb-2"
+placeholder="Type any Number Here">
+
+                            <button class="btn btn-primary" onclick="toString()">Changes into text</button>
+                            <button class="btn btn-primary" onclick="toInteger()">Changes into a Number</button>
+                            <div id="convertresult" class="box p-3 mt-3 rounded">Type a number above and press a button</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Find and Swap a Word</h3>
+                            <input id="find-word" class="form-control mb-2" placeholder="Word to Find">
+
+                            <input id="swap-word" class="form-control mb-2" placeholder="Word to Swap">
+
+                    
+                            <button class="btn btn-primary" onclick="toSearch()">Find it</button>
+                            <button class="btn btn-primary" onclick="toReplace()">Swap it</button>
+                            <div id="result" class="box p-3 mt-3 rounded">Sentence: The Dragon Flew Over The Castle</div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <script>
+                        var sen="The Dragon Flew Over the Castle";
+
+                        function checkTypes() {
+
+                                document.getElementById("getresult").innerText =
+
+                                    "Score 42 — type: " + typeof 42 + "\n" +
+
+                                    "Name 'Alex' — type: " + typeof "Alex" + "\n" +
+
+                                    "Game over true — type: " + typeof true;
+
+                            }
+
+                            function toString() {
+
+                                var v = document.getElementById("integer").value;
+
+                                document.getElementById("convertresult").innerHTML = "String(" + v + ") = '" + String(v) + "' — now it is a: " + typeof String(v);
+
+                            }
+
+                            function toInteger() {
+
+                                var v = document.getElementById("integer").value;
+
+                                document.getElementById("convertresult").innerHTML = "Number('" + v + "') = " + Number(v) + " — now it is a: " + typeof Number(v);
+
+                            }
+
+                            function toSearch() {
+
+                                var w = document.getElementById("find-word").value;
+
+                                var p = sen.search(w);
+
+                                document.getElementById("result").innerHTML = p === -1 ? "'" + w + "' is not in the sentence — try another word!" : "Found '" + w + "' hiding at position " + p + "!";
+
+                            }
+
+                            function toReplace() {
+
+                                var w = document.getElementById("find-word").value;
+
+                                document.getElementById("result").innerHTML = "New sentence: " + sen.replace(w, document.getElementById("swap-word").value);
+
+                            }
+                    </script>
+
+
+                    
+    </body>
+</html>
