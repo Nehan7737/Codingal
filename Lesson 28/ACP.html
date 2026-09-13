@@ -57,33 +57,33 @@
     </div>
 
     <script>
-        var song = ['Homework', 'Breakfast', 'Exercise', 'Reading', 'Packing Bag']
+        var tasks = ['Homework', 'Breakfast', 'Exercise', 'Reading', 'Packing Bag']
 
-        var plays = [123, 34, 56, 76, 28]
-        document.getElementById("plays-result").innerHTML = "playes" + plays
+        var minutes = [10, 15, 12, 45, 30]
+        document.getElementById("plays-result").innerHTML = "plays" + tasks
 
-        function sortleast() { plays.sort(function (a, b) { return a - b; }); document.getElementById("count-result").innerHTML = "Least played first: " + plays; }
+        function sortleast() { minutes.sort(function (a, b) { return a - b; }); document.getElementById("count-result").innerHTML = "Tasks " + tasks; }
 
         function sortmost() {
-            plays.sort(function (a, b) { return b - a; }); document.getElementById("count-result").innerHTML = "Most played first: " + plays;
+            minutes.sort(function (a, b) { return b - a; }); document.getElementById("count-result").innerHTML = "Most time took " + minutes;
         }
 
 
 
-        document.getElementById("name-result").innerHTML = "songs" + song
+        document.getElementById("name-result").innerHTML = "tasks" + tasks
         function sortAZ() {
 
-            song.sort();
+            tasks.sort();
 
-            document.getElementById("name-result").innerHTML = "A-Z" + song;
+            document.getElementById("name-result").innerHTML = "A-Z" + tasks;
         }
 
         function sortZA() {
 
-            song.sort();
-            song.reverse();
+            tasks.sort();
+            tasks.reverse();
 
-            document.getElementById("name-result").innerHTML = "Z-A" + song;
+            document.getElementById("name-result").innerHTML = "Z-A" + tasks;
         }
 
 
