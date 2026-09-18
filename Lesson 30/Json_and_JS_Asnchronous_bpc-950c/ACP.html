@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <title>School Event Data Viewer</title>
+
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: aliceblue;
+
+            text-align: center;
+
+            padding: 30px;
+
+        }
+
+        h1 {
+            color: #ff5a43;
+        }
+
+        button {
+
+            background: #ff5a43;
+
+            color: white;
+
+            padding: 10px 25px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            margin: 5px;
+
+        }
+
+        div {
+
+            border: 1px solid #ff5a43;
+
+            width: 300px;
+
+            margin: 7px auto;
+
+            padding: 10px 13px;
+
+            text-align: left;
+
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+  
+    <div class="event-card">
+
+    <h1>School Event Data Viewer</h1>
+    <p>This page allows you to view the details with Json.</p>
+
+    <button onclick="showSchoolEvent()">Load Event Details</button>
+    
+
+    <div class="info-box">
+
+        <h2>Loading status:</h2>
+        <p id="status">Waiting to load event data...</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Event Details:</h2>
+            <p id="eventDetails"></p>
+            </div>
+
+            <div class="info-box">
+                <h2>JSON Text Output</h2>
+                <p id="jsonOutput"></p>
+                </div>
+
+
+                </div>
+
+
+                <script>
+
+                    function showLoadingMessage(Message)
+                    
+                    {
+                        document.getElementById("status").innerHTML=Message;
+                    }
+
+
+
+
+                </script>
+
+
+
+
+    
+    <script>
+
+        let order = {
+
+            item: "Pizza",
+            price: "5 AED",
+            shop: "My Snacks Cafe",
+
+        };
+
+        function saveOrder() {
+
+
+            let JsonText = JSON.stringify(order);
+
+            let LoadedOrder = JSON.parse(JsonText);
+
+
+            document.getElementById("Json-Text").innerHTML = JsonText;
+
+            document.getElementById("Loaded-Item").innerHTML = LoadedOrder.item;
+
+            document.getElementById("Loaded-Price").innerHTML = LoadedOrder.price;
+
+        }
+
+
+        function delay(ms) {
+            return new Promise(function (resolve) {
+                setTimeout(resolve, ms);
+
+            });
+        }
+
+        async function startDelivery() {
+
+            document.getElementById("Result").innerHTML = "";
+
+            document.getElementById("Status").innerHTML = "Order received!";
+
+            setTimeout(function () {
+
+                document.getElementById("Status").innerHTML = "Kitchen is preparing...";
+
+            }, 1000);
+            await delay(3000);
+
+            document.getElementById("Status").innerHTML = "Out for delivery!";
+
+            await delay(2000);
+
+            document.getElementById("Result").innerHTML = "Your order has arrived!";
+
+        }
+
+        function fetchSchoolData(callback)
+        {
+            callback("Loading school event data... please wait.");
+
+            return new Promise(function(resolve) {
+
+                setTimeout(function() {
+
+                    let schoolEvent={
+                        eventName: "Annual Science Fair",
+                        date: "7 April 2026",
+                        time: "9:00AM",
+                        venue: "School Auditorium",
+                        coordinator: "Ms. Shreya",
+                        participants: 120,
+                        isRegistrationOpen: True
+
+                    };
+
+                    resolve(schoolEvent);
+
+                },2000);
+
+            });
+        }
+
+    
+            async function showSchoolEvent() {
+
+                let eventData = await fetchSchoolEventData(showLoadingMessage);
+
+                document.getElementById("status").innerHTML = "Event data loaded successfully!";
+
+                let jsonText = JSON.stringify(eventData);
+
+                
+                let parsedEvent = JSON.parse(jsonText);
+
+                
+                let eventMessage = "";
+                eventMessage = eventMessage + "Event Name: " + parsedEvent.eventName + "<br>";
+                eventMessage = eventMessage + "Date: " + parsedEvent.date + "<br>";
+                eventMessage = eventMessage + "Time: " + parsedEvent.time + "<br>";
+                eventMessage = eventMessage + "Venue: " + parsedEvent.venue + "<br>";
+                eventMessage = eventMessage + "Coordinator: " + parsedEvent.coordinator + "<br>";
+                eventMessage = eventMessage + "Participants: " + parsedEvent.participants + "<br>";
+
+                if (parsedEvent.isRegistrationOpen === true) {
+                    eventMessage = eventMessage + "Registration Status: Open";
+                } else {
+                    eventMessage = eventMessage + "Registration Status: Closed";
+                }
+
+                document.getElementById("eventDetails").innerHTML = eventMessage;
+                document.getElementById("jsonOutput").innerHTML = jsonText;
+            }
+
+      </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+    </script>
+
+</body>
+</head>
+</html>
