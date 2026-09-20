@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Tinu's random numbers</h2>
+    <p id="numbers"></p>
+    <p id="random"></p>
+    <p id="rounded"></p>
+    <p id="date"></p>
+
+    <script>
+        // Method: returns a random whole number from 1 to 100
+        function getRandomInt() {
+            return Math.floor(Math.random() * 100) + 1;
+
+
+
+        }
+
+
+
+        var set = "";
+        for (var i = 0; i < 5; i++) {
+            set = set + getRandomInt() + " ";
+        }
+
+
+
+        document.getElementById("numbers").innerHTML = "Random set: " + set;
+
+        
+
+
+        var randomNum = Math.random() * 100;
+        document.getElementById("random").innerHTML = "Random number: " + randomNum;
+        document.getElementById("rounded").innerHTML = "Rounded value: " + Math.round(randomNum);
+
+        
+        
+        document.getElementById("date").innerHTML = "Today's date: " + new Date().toDateString();
+        
+    </script>
+</body>
+
+</html>
