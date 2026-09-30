@@ -1,0 +1,39 @@
+footer{
+    background-color: rgb(28, 114, 85);
+    width: 100%;
+}
+footer .container{
+    padding: 22px 0;
+    color: bisque;
+}
+footer h5{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: greenyellow;
+
+}
+footer a{
+    text-decoration: none;
+    color: lightcoral;
+}
+footer a:hover{
+    text-decoration: underline;
+
+}
+/*
+
+
+a) Target `footer a`
+
+b) Set link color to yellow using `color: #f2a900 !important;`
+
+c) Remove underline using `text-decoration: none;`
+
+5) Add hover effect for the link:
+
+a) Target `footer a:hover`
+
+b) Show underline on hover using `text-decoration: underline;`
+
+*/
