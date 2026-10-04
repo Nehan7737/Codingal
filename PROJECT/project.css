@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(135deg, #a215de 0%, #c4239c 100%);
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.navigation
+
+{
+    background: #9748c4;
+    border-top: 2px solid black;
+    padding: 12px;
+}
+
+.brand-logo {
+    height: 26px;
+    width: auto;
+}
+
+
+.navigation-link {
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e06464 !important;
+
+}
+
+
+
+.navigation-link:hover {
+
+
+
+    color: #c57f24 !important;
+
+}
+
+
+
+.about {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    border-radius: 15px;
+    margin-top: 50px;
+
+}
+
+.m-heading {
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+
+}
+
+
+
+.btn-outline-warning {
+
+
+    border-width: 2px;
+    font-weight: 600;
+    padding: 10px 30px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.btn-outline-warning:hover {
+    background-color: #d73da4;
+
+    transform: scale(1.05);
+
+}
