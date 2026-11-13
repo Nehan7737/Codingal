@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Digital Animal Park</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            text-align: center;
+            color: #222222;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        #animalPark {
+            width: 420px;
+            border: 3px solid darkgreen;
+            border-radius: 12px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        .habitat {
+            border: 2px solid seagreen;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 12px;
+            background-color: #f0fff0;
+            text-align: left;
+        }
+
+        .animal {
+            font-weight: bold;
+            color: darkorange;
+        }
+
+        button {
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 22px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #info {
+            width: 420px;
+            border: 2px dashed darkgreen;
+            border-radius: 10px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Digital Animal Park</h1>
+
+    <p>
+        Use JavaScript and the DOM to explore animals, habitats, parent nodes,
+        child nodes, and sibling nodes.
+    </p>
+
+    <div id="animalPark">
+
+        <div class="habitat" id="tigerHabitat">
+            <h2>Tiger Habitat</h2>
+            <p>Animal: <span class="animal">Tiger</span></p>
+        </div>
+
+        <div class="habitat" id="giraffeHabitat">
+            <h2>Giraffe Habitat</h2>
+            <p>Animal: <span class="animal">Giraffe</span></p>
+        </div>
+
+        <div class="habitat" id="zebraHabitat">
+            <h2>Zebra Habitat</h2>
+            <p>Animal: <span class="animal">Zebra</span></p>
+        </div>
+
+    </div>
+
+    <button onclick="managePark()">Manage Park</button>
+
+    <div id="info">
+        Animal park information will appear here.
+    </div>
+
+    <script>
+        function managePark() {
+
+            let park = document.getElementById("animalPark");
+            let tiger = document.getElementById("tigerHabitat");
+            let giraffe = document.getElementById("giraffeHabitat");
+            let zebra = document.getElementById("zebraHabitat");
+            let info = document.getElementById("info");
+
+            let parentNodeName = tiger.parentNode.id;
+
+            let firstChildHabitat = park.children[0].id;
+            let secondChildHabitat = park.children[1].id;
+            let nextSiblingHabitat = tiger.nextElementSibling.id;
+            let previousSiblingHabitat = zebra.previousElementSibling.id;
+
+            let elementNodeType = tiger.nodeType;
+            let textNodeType = tiger.firstChild.nodeType;
+
+            tiger.style.backgroundColor = "#fff3cd";
+            giraffe.style.backgroundColor = "#d1ecf1";
+            zebra.style.backgroundColor = "#f8d7da";
+
+            tiger.querySelector("h2").innerHTML = "Updated Tiger Habitat";
+            giraffe.querySelector("h2").innerHTML = "Updated Giraffe Habitat";
+            zebra.querySelector("h2").innerHTML = "Updated Zebra Habitat";
+
+            info.innerHTML =
+                "<strong>DOM Tree Information:</strong><br>" +
+                "Parent of Tiger Habitat: " + parentNodeName + "<br>" +
+                "First child of Animal Park: " + firstChildHabitat + "<br>" +
+                "Second child of Animal Park: " + secondChildHabitat + "<br><br>" +
+
+                "<strong>Sibling Node Information:</strong><br>" +
+                "Next sibling of Tiger Habitat: " + nextSiblingHabitat + "<br>" +
+                "Previous sibling of Zebra Habitat: " + previousSiblingHabitat + "<br><br>" +
+
+                "<strong>Types of Nodes:</strong><br>" +
+                "Tiger Habitat element node type: " + elementNodeType + "<br>" +
+                "Tiger Habitat first child node type: " + textNodeType + "<br><br>" +
+
+                "<strong>DOM Update:</strong><br>" +
+                "The animal habitat headings and background colours were updated using JavaScript.";
+        }
+    </script>
+
+</body>
+
+</html>
