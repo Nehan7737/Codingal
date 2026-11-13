@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Bank Balance Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            color: #222222;
+            text-align: center;
+        }
+
+        #app {
+            width: 350px;
+            background-color: white;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px #cccccc;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        #balance-label {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        #balance {
+            font-size: 28px;
+            font-weight: bold;
+            color: darkgreen;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .action {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .credit {
+            background-color: seagreen;
+        }
+
+        .debit {
+            background-color: crimson;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>My Bank</h1>
+
+        <div id="balance-box">
+            <p id="balance-label">Available balance</p>
+            <p id="balance">1000</p>
+        </div>
+
+        <div id="entry-box">
+            <label id="amount-label" for="amount">Enter amount</label>
+            <input type="number" id="amount" placeholder="0" min="0.01" step="any">
+
+            <button class="action credit" id="credit-btn">Credit</button>
+            <button class="action debit" id="debit-btn">Debit</button>
+        </div>
+
+        <p id="message"></p>
+
+        <p id="note">Enter an amount and choose Credit or Debit.</p>
+
+    </div>
+
+    <script>
+        let balance = 1000;
+
+        let balanceDisplay = document.getElementById("balance");
+        let amountInput = document.getElementById("amount");
+        let message = document.getElementById("message");
+
+        document.getElementById("credit-btn").onclick = function () {
+            let amount = Number(amountInput.value);
+
+            if (amountInput.value === "" || !Number.isFinite(amount) || amount <= 0) {
+                message.innerHTML = "Please enter a valid amount.";
+                message.style.color = "red";
+            } else {
+                balance = balance + amount;
+                balanceDisplay.innerHTML = balance.toFixed(2);
+                message.innerHTML = "Amount credited successfully!";
+                message.style.color = "green";
+            }
+
+            amountInput.value = "";
+        };
+
+        document.getElementById("debit-btn").onclick = function () {
+            let amount = Number(amountInput.value);
+
+            if (amountInput.value === "" || !Number.isFinite(amount) || amount <= 0) {
+                message.innerHTML = "Please enter a valid amount.";
+                message.style.color = "red";
+            } else if (amount > balance) {
+                message.innerHTML = "Not enough balance.";
+                message.style.color = "red";
+            } else {
+                balance = balance - amount;
+                balanceDisplay.innerHTML = balance.toFixed(2);
+                message.innerHTML = "Amount debited successfully!";
+                message.style.color = "green";
+            }
+
+            amountInput.value = "";
+        };
+    </script>
+
+</body>
+
+</html>
