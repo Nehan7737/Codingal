@@ -4,6 +4,54 @@
     <link rel="stylesheet" href="ACP3.css">
 </head>
 
+<p id="message" aria-live="polite"></p>
+
+<script>
+    const balanceElement = document.getElementById("total-balance");
+    const amountElement = document.getElementById("money");
+    const messageElement = document.getElementById("message");
+
+    function showMessage(text) {
+        messageElement.textContent = text;
+    }
+
+    function getValidAmount() {
+        const amount = Number(amountElement.value);
+
+        if (amountElement.value === "" || !Number.isFinite(amount) || amount <= 0) {
+            showMessage("Please enter an amount greater than zero.");
+            return null;
+        }
+
+        return amount;
+    }
+
+    document.getElementById("deposit-btn").addEventListener("click", function () {
+        const amount = getValidAmount();
+        if (amount === null) return;
+
+        const balance = Number(balanceElement.textContent);
+        balanceElement.textContent = balance + amount;
+        amountElement.value = "";
+        showMessage("Deposit successful.");
+    });
+
+    document.getElementById("withdraw-btn").addEventListener("click", function () {
+        const amount = getValidAmount();
+        if (amount === null) return;
+
+        const balance = Number(balanceElement.textContent);
+        if (amount > balance) {
+            showMessage("Not enough balance.");
+            return;
+        }
+
+        balanceElement.textContent = balance - amount;
+        amountElement.value = "";
+        showMessage("Withdrawal successful.");
+    });
+</script>
+
 <body>
 
     <div id="bank-app">
